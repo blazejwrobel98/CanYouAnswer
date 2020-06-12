@@ -11,6 +11,10 @@ namespace CanYouAnswer
     {
         static void Main(string[] args)
         {
+            if(Class1.Prawda() == true)
+            {
+                Console.WriteLine("Prawda");
+            }
         }
     }
 }
