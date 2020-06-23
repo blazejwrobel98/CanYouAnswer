@@ -8,7 +8,18 @@ namespace storage
 {
     public class questions
     {
-        List<string[]> main = new List<string[]>();
+        public static string[] ReadQuestions()
+        {
+            string line;
+            System.IO.StreamReader file =
+            new System.IO.StreamReader(@"..\..\..\questions.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                System.Console.WriteLine(line);
+            }
+            file.Close();
+            return line.Split('-');
+        }
     }
     public class menu_options
     {

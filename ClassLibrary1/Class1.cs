@@ -23,6 +23,13 @@ namespace ClassLibrary1
                     counter++;
                 }
                 int choose = input.GetInt();
+                switch (choose)
+                {
+                    case 1:
+                        game.RandomQuestion();
+                        break;
+                }
+
             }
         }
     }
@@ -46,6 +53,18 @@ namespace ClassLibrary1
                     Console.WriteLine("Podano nieprawidłową wartość, spróbuj jeszcze raz.");
                 }
             }
+        }
+    }
+    public class game
+    {
+        public static int RandomQuestion()
+        {
+            string[] available = storage.questions.ReadQuestions();
+            foreach(string el in available)
+            {
+                Console.WriteLine(el);
+            }
+            return 1;
         }
     }
 }
