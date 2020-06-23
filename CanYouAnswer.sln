@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanYouAnswer", "CanYouAnswe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{E3AB5F0D-EEA5-43F7-856A-B02593B7AB8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "storage", "storage\storage.csproj", "{7AB9E693-DDEC-487B-824B-05FDB48BEDD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E3AB5F0D-EEA5-43F7-856A-B02593B7AB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3AB5F0D-EEA5-43F7-856A-B02593B7AB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3AB5F0D-EEA5-43F7-856A-B02593B7AB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB9E693-DDEC-487B-824B-05FDB48BEDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB9E693-DDEC-487B-824B-05FDB48BEDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB9E693-DDEC-487B-824B-05FDB48BEDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB9E693-DDEC-487B-824B-05FDB48BEDD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

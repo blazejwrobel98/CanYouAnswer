@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary1;
+using storage;
 
 namespace CanYouAnswer
 {
@@ -11,10 +12,7 @@ namespace CanYouAnswer
     {
         static void Main(string[] args)
         {
-            if(Class1.Prawda() == true)
-            {
-                Console.WriteLine("Prawda");
-            }
+            ClassLibrary1.menu.Main();
         }
     }
 }
