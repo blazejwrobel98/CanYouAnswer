@@ -13,15 +13,7 @@ namespace CanYouAnswer
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Start.Menu();
-            }
-            catch
-            {
-                throw new Exception("Wystąpił błąd w [Start.Menu()]");
-            }
-            
+            Start.Menu();
         }
     }
     class Start
@@ -30,6 +22,7 @@ namespace CanYouAnswer
         {
             while (true)
             {
+                Console.Clear();
                 int counter = 1;
                 foreach (string el in storage.menu_options.main())
                 {
@@ -44,10 +37,45 @@ namespace CanYouAnswer
                 switch (choose)
                 {
                     case 1:
-                        game.RandomQuestion();
+                        Game.Start();
+                        break;
+                    case 2:
+                        Game.Manual();
+                        break;
+                    case 3:
+                        Game.Statistics();
+                        break;
+                    case 4:
+                        Game.Options();
+                        break;
+                    case 0:
+                        Console.WriteLine("Zamykam program");
+                        return;
+                    default:
+                        Console.WriteLine("Nie wybrano żadnej z powyższych opcji, spróbuj jeszcze raz");
+                        Console.ReadKey();
                         break;
                 }
             }
+        }
+    }
+    class Game
+    {
+        public static void Start()
+        {
+
+        }
+        public static void Manual()
+        {
+
+        }
+        public static void Statistics()
+        {
+
+        }
+        public static void Options()
+        {
+
         }
     }
 }

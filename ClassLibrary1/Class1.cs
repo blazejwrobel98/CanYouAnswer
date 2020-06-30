@@ -7,7 +7,6 @@ using storage;
 
 namespace ClassLibrary1
 {
-    
     public class input
     {
         public static int GetInt(string line="")
@@ -30,16 +29,5 @@ namespace ClassLibrary1
             }
         }
     }
-    public class game
-    {
-        public static int RandomQuestion()
-        {
-            string[] available = storage.questions.ReadQuestions();
-            foreach(string el in available)
-            {
-                Console.WriteLine(el);
-            }
-            return 1;
-        }
-    }
+
 }
