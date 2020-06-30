@@ -7,32 +7,7 @@ using storage;
 
 namespace ClassLibrary1
 {
-    public class menu
-    {
-        public static void Main(){
-            while (true)
-            {
-                int counter = 1;
-                foreach (string el in storage.menu_options.main())
-                {
-                    if (el == "Wyjście")
-                    {
-                        counter = 0;
-                    }
-                    Console.WriteLine($"[{counter}] {el}");
-                    counter++;
-                }
-                int choose = input.GetInt();
-                switch (choose)
-                {
-                    case 1:
-                        game.RandomQuestion();
-                        break;
-                }
-
-            }
-        }
-    }
+    
     public class input
     {
         public static int GetInt(string line="")
