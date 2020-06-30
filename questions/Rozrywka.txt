@@ -1,0 +1,13 @@
+﻿Jak ma na imię syn Roberta Więckiewicza?;Konstanty;Ambroży;Patryk;Robert;
+Jak nazywa się marka Joanny Przetakiewicz?;La Mania;Gracia;Dracco;Poligloria;
+Jak nazywa się prowadząca programu emitowanego na antenie TVN Style “O tym się mówi”‘?;Ana Wendzikowska;Anna Guzik;Magda Mołek;Agnieszka Szulim;
+Jaki pseudonim sceniczny przyjął Adam Darski?;Nergal;Piasek;Behemot;Mieczu;
+Kim są autorzy bloga “Aś my wczoraj dali”?;Polonistami;Fizykami;Matematykami;Informatykami;
+Kto był właścicielem Australia Zoo, który zmarł po tym, jak płaszczka ugodziła go w pierś?;Steve Irwin;Steve Berlin;Steve Marvin;Steve Merlin;
+Kto jest inspiracją modową dla autorki bloga “Macademian Girl”?;Anna Dello Ruso;Sarah Jessica Parker;Sienna Miller;Anna Wintour;
+Który kraj wygrał Konkurs Piosenki Eurowizji w 2010 roku?;Niemcy;Norwegia;Szwecja;Rosja;
+Który z polskich reżyserów otrzymał Oscara?;Andrzej Wajda;Krzysztof Zanussi;Jerzy Kawalerowicz;Jerzy Hoffman;
+Na wybiegu w jakim mieście zadebiutowała Anja Rubik?;Mediolan;Paryż;Tokio;Nowy Jork;
+O czym pisze autorka bloga whiteplate?;O gotowaniu;O literaturze;O modzie;O restauracjach;
+Z kim w ﬁnale programu “Mam talent” przegrał Kamil Bednarek?;Z Magdaleną Welc;Z Melkart Ball;Z Marcinem Wyrostkiem;Z Kacprem Sikorą;
+Z którym aktorem spotykała się Joanna Krupa?;Jensen Ackles;Paul Wesley;Jared Leto;Jonathan Rhyn Meyers;
