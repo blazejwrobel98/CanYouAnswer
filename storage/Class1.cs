@@ -1,21 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace storage
+namespace Storage
 {
-    public class questions
+    public class Questions
     {
 
     }
-    public class menu_options
+    public class Menu_options
     {
-        public static string[] main()
+        public static string[] Main()
         {
-            var options = new string[] { "Graj" , "Instrukcja" , "Statystyki" , "Opcje" , "Wyjście" };
+            var options = new string[] { "Graj", "Instrukcja", "Statystyki", "Opcje", "Wyjście" };
             return options;
+        }
+    }
+    public class Players
+    {
+        public static string[] List()
+        {
+            string[] players = File.ReadLines("../../../db/users.txt").ToArray();
+            return players;
         }
     }
 }

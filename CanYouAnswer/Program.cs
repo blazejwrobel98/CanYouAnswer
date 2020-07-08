@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using ClassLibrary1;
-using storage;
+﻿using Repository;
+using System;
 
 namespace CanYouAnswer
 {
@@ -13,40 +7,30 @@ namespace CanYouAnswer
     {
         static void Main(string[] args)
         {
-            Start.Menu();
+            Game.Options();
         }
     }
-    class Start
+    class Game
     {
-        public static void Menu()
+        public static Player gamer = new Player();
+        public static void Options()
         {
             while (true)
             {
-                Console.Clear();
-                int counter = 1;
-                foreach (string el in storage.menu_options.main())
-                {
-                    if (el == "Wyjście")
-                    {
-                    counter = 0;
-                    }
-                    Console.WriteLine($"[{counter}] {el}");
-                    counter++;
-                }
-                int choose = ClassLibrary1.input.GetInt();
+                int choose = Repository.Input.Menu();
                 switch (choose)
                 {
                     case 1:
-                        Game.Start();
+                        Start_game();
                         break;
                     case 2:
-                        Game.Manual();
+                        Manual();
                         break;
                     case 3:
-                        Game.Statistics();
+                        Statistics();
                         break;
                     case 4:
-                        Game.Options();
+                        Settings();
                         break;
                     case 0:
                         Console.WriteLine("Zamykam program");
@@ -56,14 +40,22 @@ namespace CanYouAnswer
                         Console.ReadKey();
                         break;
                 }
+                Console.Clear();
             }
         }
-    }
-    class Game
-    {
-        public static void Start()
+        public static void Start_game()
         {
-
+            if (gamer.Name!=null)
+            {
+                Console.WriteLine("Gramy");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Nie rozpoznano użytkownika");
+                Settings();
+            }
         }
         public static void Manual()
         {
@@ -73,9 +65,13 @@ namespace CanYouAnswer
         {
 
         }
-        public static void Options()
+        public static void Settings()
         {
-
+            if (gamer.Name == null)
+            {
+                gamer.Name = Repository.Input.GetName();
+                Console.WriteLine($"Witaj {gamer.Name}");
+            }
         }
     }
 }
