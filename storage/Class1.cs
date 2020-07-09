@@ -5,7 +5,11 @@ namespace Storage
 {
     public class Questions
     {
-
+        public static string[] List()
+        {
+            string[] questions = File.ReadLines("../../../questions/questions.txt").ToArray();
+            return questions;
+        }
     }
     public class Menu_options
     {

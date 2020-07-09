@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -94,6 +95,22 @@ namespace Repository
                     Console.Clear();
                 }
             }
+        }
+        public static void Question()
+        {
+            string[] questions = Storage.Questions.List();
+            int counter = questions.Length;
+            var random = new Random();
+            int result = random.Next(0, counter-1);
+            var gen = new List<string>();
+            string[] que = questions[result].Split(';');
+            foreach(string el in que)
+            {
+                gen.Add(el.Trim(';'));
+            }
+            string[] res = gen.ToArray();
+            Console.WriteLine($"{res[0]}\n[1]{res[1]}\t[2]{res[2]}\t[3]{res[3]}\t[4]{res[4]}\t");
+            Console.ReadKey();
         }
     }
     public class Player

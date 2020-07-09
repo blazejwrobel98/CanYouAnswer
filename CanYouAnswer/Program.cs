@@ -49,8 +49,10 @@ namespace CanYouAnswer
         {
             if (gamer.Name!=null)
             {
-                Console.WriteLine("Gramy");
+                Console.WriteLine("Gramy!");
                 Console.ReadKey();
+                Console.Clear();
+                Repository.Input.Question();
             }
             else
             {
