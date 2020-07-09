@@ -30,6 +30,7 @@ namespace CanYouAnswer
                         Statistics();
                         break;
                     case 4:
+                        Console.Clear();
                         Settings();
                         break;
                     case 0:
@@ -38,6 +39,7 @@ namespace CanYouAnswer
                     default:
                         Console.WriteLine("Nie wybrano żadnej z powyższych opcji, spróbuj jeszcze raz");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                 }
                 Console.Clear();
@@ -71,6 +73,48 @@ namespace CanYouAnswer
             {
                 gamer.Name = Repository.Input.GetName();
                 Console.WriteLine($"Witaj {gamer.Name}");
+                Console.ReadKey();
+                Console.Clear();
+                return;
+            }
+            else
+            {
+                while (true)
+                {
+                    Console.WriteLine("Wybierz opcję z dostępnych:\n[0] Zmiana użytkownika\n[1] Wyloguj się\n[2] Wróć");
+                    string temp = Console.ReadLine();
+                    if (Repository.Input.GetInt(temp))
+                    {
+                            switch (int.Parse(temp))
+                            {
+                                case 0:
+                                    gamer.Name = Repository.Input.GetName();
+                                    Console.WriteLine($"Witaj {gamer.Name}");
+                                    Console.ReadKey();
+                                Console.Clear();
+                                return;
+                                case 1:
+                                    gamer.Name = null;
+                                    Console.WriteLine("Wylogowano");
+                                    Console.ReadKey();
+                                Console.Clear();
+                                return;
+                                case 2:
+                                    return;
+                                default:
+                                    Console.WriteLine("Nie wybrano żadnej z powyższych opcji, spróbuj jeszcze raz");
+                                    Console.ReadKey();
+                                Console.Clear();
+                                continue;
+                            }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wpisana wartość nie jest liczbą");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                }
             }
         }
     }

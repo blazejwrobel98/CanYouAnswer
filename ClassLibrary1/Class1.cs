@@ -6,7 +6,7 @@ namespace Repository
 {
     public class Input
     {
-        static bool GetInt(string line = "")
+        public static bool GetInt(string line = "")
         {
             if (int.TryParse(line, out int res))
             {
@@ -50,39 +50,49 @@ namespace Repository
             {
                 Console.Write("Podaj nick: ");
                 string temp = Console.ReadLine();
-                string[] players = Storage.Players.List();
-                int counter = players.Length;
-                if (players.Contains(temp))
+                if (temp.Trim() == "")
                 {
-                    Console.WriteLine("Taki użytkownik już istnieje, chcesz wybrać istniejącego czy stworzyć nowego?");
-                    Console.WriteLine("[0] Istniejący \n[1] Nowy");
-                    string choose = Console.ReadLine();
-                    if (GetInt(choose))
-                    {
-                        int choice = int.Parse(choose);
-                        switch (choice)
-                        {
-                            case 0:
-                                return temp;
-                            case 1:
-                                continue;
-                        }
-                    }
+                    Console.WriteLine("Nie podano żadnych danych");
+                    Console.ReadKey();
                     Console.Clear();
+                    continue;
                 }
                 else
                 {
-                    if (counter > 0)
+                    string[] players = Storage.Players.List();
+                    int counter = players.Length;
+                    if (players.Contains(temp))
                     {
-                        File.AppendAllText(@"../../../db/users.txt", Environment.NewLine + $"{temp}" );
+                        Console.WriteLine("Taki użytkownik już istnieje, chcesz wybrać istniejącego czy stworzyć nowego?");
+                        Console.WriteLine("[0] Istniejący \n[1] Nowy");
+                        string choose = Console.ReadLine();
+                        if (GetInt(choose))
+                        {
+                            int choice = int.Parse(choose);
+                            switch (choice)
+                            {
+                                case 0:
+                                    return temp;
+                                case 1:
+                                    continue;
+                            }
+                        }
+                        Console.Clear();
                     }
                     else
                     {
-                        File.AppendAllText(@"../../../db/users.txt", $"{temp}");
+                        if (counter > 0)
+                        {
+                            File.AppendAllText(@"../../../db/users.txt", Environment.NewLine + $"{temp}");
+                        }
+                        else
+                        {
+                            File.AppendAllText(@"../../../db/users.txt", $"{temp}");
+                        }
+                        return temp;
                     }
-                    return temp;
+                    Console.Clear();
                 }
-                Console.Clear();
             }
         }
     }
