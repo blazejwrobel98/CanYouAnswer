@@ -51,8 +51,21 @@ namespace CanYouAnswer
             {
                 Console.WriteLine("Gramy!");
                 Console.ReadKey();
-                Console.Clear();
-                Repository.Input.Question();
+                while (true)
+                {
+                    Console.Clear();
+                    int score = Repository.Input.Question();
+                    switch (score)
+                    {
+                        case 0:
+                            continue;
+                        case 1:
+                            gamer.Score += 1;
+                            continue;
+                        case 2:
+                            return;
+                    }
+                }
             }
             else
             {
@@ -63,11 +76,18 @@ namespace CanYouAnswer
         }
         public static void Manual()
         {
-
+            string[] manual = Storage.Manual.List();
+            int counter = 1;
+            foreach(string el in manual)
+            {
+                Console.WriteLine($"[{counter}] {el}");
+                counter++;
+            }
+            Console.ReadKey();
         }
         public static void Statistics()
         {
-
+            Repository.Input.Score(gamer);
         }
         public static void Settings()
         {

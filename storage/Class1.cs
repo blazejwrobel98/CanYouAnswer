@@ -27,4 +27,18 @@ namespace Storage
             return players;
         }
     }
+    public class Manual
+    {
+        public static string[] List()
+        {
+            string[] manual = { "Menu wyświetlane po uruchomieniu steruje działaniem aplikacji",
+                "Opcja graj zaczyna grę, jeśli nie zalogowaliśmy się w pozycji\n opcje to zostaniemy " +
+                "przekierowani. Podczas gry należy wybierać \npoprawne odpowiedzi za pomocą cyfr 1-4 " +
+                "i zatwierdzać klawiszem ENTER","W opcji statystyki możemy podejrzeć zebrane w sesji " +
+                "punkty. \nWynik nie jest zapisywany i po restarcie zostanie utracony!!",
+                "W sekcji Opcje możemy się Zalogować, Zmienić użytkownika bądź Wylogować",
+                "Opcja Wyjście zamyka aplikację" };
+            return manual;
+        }
+    }
 }

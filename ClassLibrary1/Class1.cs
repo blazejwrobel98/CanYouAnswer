@@ -96,7 +96,7 @@ namespace Repository
                 }
             }
         }
-        public static void Question()
+        public static int Question()
         {
             string[] questions = Storage.Questions.List();
             int counter = questions.Length;
@@ -109,26 +109,137 @@ namespace Repository
                 gen.Add(el.Trim(';'));
             }
             string[] res = gen.ToArray();
-            Console.WriteLine($"{res[0]}\n[1]{res[1]}\t[2]{res[2]}\t[3]{res[3]}\t[4]{res[4]}\t");
+            var rnd = new Random();
+            int rand = rnd.Next(1, 4);
+            string odp1 = null;
+            string odp2 = null;
+            string odp3 = null;
+            string odp4 = null;
+            switch (rand)
+            {
+                case 1:
+                    odp1 = res[1];
+                    odp2 = res[2];
+                    odp3 = res[3];
+                    odp4 = res[4];
+                    break;
+                case 2:
+                    odp1 = res[2];
+                    odp2 = res[1];
+                    odp3 = res[4];
+                    odp4 = res[3];
+                    break;
+                case 3:
+                    odp1 = res[4];
+                    odp2 = res[2];
+                    odp3 = res[1];
+                    odp4 = res[3];
+                    break;
+                case 4:
+                    odp1 = res[2];
+                    odp2 = res[4];
+                    odp3 = res[3];
+                    odp4 = res[1];
+                    break;
+            }
+            Console.WriteLine($"{res[0]}\n[1]{odp1}\t[2]{odp2}\t[3]{odp3}\t[4]{odp4}\t");
+            Console.WriteLine("\n\nJeżeli chcesz zakończyć grę wciśnij ENTER");
+            string answer = Console.ReadLine();
+            if (GetInt(answer))
+            {
+                int choose = int.Parse(answer);
+                switch (rand)
+                {
+                    case 1:
+                        if(choose == 1)
+                        {
+                            Console.WriteLine("Odpowiedź poprawna!!");
+                            Console.ReadKey();
+                            return 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Błędna odpowiedź!!");
+                            Console.ReadKey();
+                            return 0;
+                        }
+                    case 2:
+                        if (choose == 2)
+                        {
+                            Console.WriteLine("Odpowiedź poprawna!!");
+                            Console.ReadKey();
+                            return 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Błędna odpowiedź!!");
+                            Console.ReadKey();
+                            return 0;
+                        }
+                    case 3:
+                        if (choose == 3)
+                        {
+                            Console.WriteLine("Odpowiedź poprawna!!");
+                            Console.ReadKey();
+                            return 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Błędna odpowiedź!!");
+                            Console.ReadKey();
+                            return 0;
+                        }
+                    case 4:
+                        if (choose == 4)
+                        {
+                            Console.WriteLine("Odpowiedź poprawna!!");
+                            Console.ReadKey();
+                            return 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Błędna odpowiedź!!");
+                            Console.ReadKey();
+                            return 0;
+                        }
+                }
+            }
+            else
+            {
+                if (answer == "")
+                {
+                    Console.WriteLine("Koniec gry");
+                    Console.ReadKey();
+                    return 2;
+                }
+                else
+                {
+                    Console.WriteLine("Błędne dane!");
+                    Console.ReadKey();
+                }
+            }
+            return 0;
+        }
+        public static void Score(Player gamer)
+        {
+            Console.WriteLine($"W  bieżącej sesji uzyskałeś wynik: {gamer.Score}");
+            if (gamer.Score > 0)
+            {
+                Console.WriteLine($"Gratulacje {gamer.Name}!");
+            }
             Console.ReadKey();
         }
     }
     public class Player
     {
         private string name;
-        private string level;
-        private string score;
+        private int score=0;
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-        public string Level
-        {
-            get { return level; }
-            set { level = value; }
-        }
-        public string Score
+        public int Score
         {
             get { return score; }
             set { score = value; }
